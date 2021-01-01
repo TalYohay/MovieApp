@@ -1,0 +1,30 @@
+html {
+    background-color: #292929;
+}
+
+.ngx-pagination a,
+.ngx-pagination button {
+    color: white !important;
+}
+
+.ngx-pagination a:hover {
+    background: #cacaca !important;
+    /* color: black !important; */
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.ngx-pagination {
+    margin: 0 auto 80px !important;
+    /* padding-left: 100px !important; */
+    text-align: center !important;
+    /* justify-content: center!important; */
+    /* margin: auto !important; */
+}
+
+
+/* .ngx-pagination .small-screen {
+    color: white !important;
+    display: inline-block !important;
+} */

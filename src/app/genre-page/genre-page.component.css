@@ -1,0 +1,216 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    color: white;
+    /* background-color: #2c2c2c; */
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* position: absolute; */
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+}
+
+.search {
+    flex: 1;
+    text-align: right;
+}
+
+input[type="search"] {
+    background-color: #222222;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 50px;
+    outline: none;
+    box-shadow: none;
+    border-style: none;
+    background-image: url("/assets/images/search-3-16.png");
+    background-repeat: no-repeat;
+    background-position: 10px;
+}
+
+::placeholder {
+    color: white;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+}
+
+
+/* .row {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.genreName h1 {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.movieCard {
+    height: 400px;
+    width: 200px;
+}
+
+.moviePoster {
+    width: 200px;
+    height: 300px;
+    cursor: pointer;
+    transition: transform .9s;
+}
+
+.moviePoster img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.moviePoster:hover {
+    /* transform: scale(1.1); */
+    transform: translateY(-10px);
+}
+
+.movieTitle {
+    margin-top: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    word-break: break-word;
+}
+
+.movieGenre {
+    color: #BDBCBB;
+}
+
+.movies-row {
+    margin-top: 100px;
+    /* display: grid;
+    grid-gap: 20px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+    /* grid-template-rows: auto auto auto auto auto auto; */
+    /* grid-template-columns: auto auto auto auto auto auto; */
+}
+
+.small-container {
+    width: 1150px;
+    margin: auto;
+    /* padding-right: 200px; */
+}
+
+.fa,
+.fas {
+    font-size: 32px;
+    font-weight: 900;
+    padding-right: 10px
+}
+
+@media screen and (max-width:600px) {
+    .navbar {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        background-color: #333333;
+        margin: auto;
+    }
+    .search {
+        padding-top: 20px;
+    }
+    .small-container {
+        width: auto;
+        padding-top: 200px;
+    }
+    .genres {
+        /* display: none; */
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+    .genres li {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    .genres a:hover {
+        color: #f1f1f1;
+    }
+    .genres .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+    }
+    .movies-row {
+        top: 2rem;
+        position: relative;
+        color: black;
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        text-size-adjust: 100%;
+        overflow-x: hidden;
+        margin: auto;
+    }
+    .movieCard {
+        flex-basis: 100%;
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        right: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .small-container {
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+    .search {
+        flex: 1;
+        text-align: right;
+    }
+    .genres ul {
+        padding-left: 150px;
+    }
+}

@@ -1,0 +1,371 @@
+    @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Source Sans Pro', Arial, sans-serif;
+        color: white;
+    }
+    /* .banner {
+    background:url('https://image.tmdb.org/t/p/original//{{singleMovie.backdrop_path}}')
+} */
+    
+    @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .navbar {
+        display: flex;
+        color: white;
+        /* background-color: #2c2c2c; */
+        align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        /* padding-top: 20px;
+        padding-bottom: 20px; */
+        /* position: absolute; */
+        /* padding-left: 100px;
+        padding-right: 100px; */
+        justify-content: center;
+    }
+    
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo a {
+        display: flex;
+        color: white;
+        text-decoration: none;
+        align-items: center;
+    }
+    
+    .fa,
+    .fas {
+        font-size: 32px;
+        font-weight: 900;
+        padding-right: 10px
+    }
+    
+    .home .backdrop img {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        height: 600px;
+        opacity: 0.2;
+        z-index: -1;
+        position: absolute;
+        object-fit: cover;
+        object-position: 0 -50px;
+    }
+    
+    .home {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0
+    }
+    
+    .home:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        /* background: rgba(56, 56, 56, 0.89); */
+    }
+    
+    .movieContent {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-left: 300px;
+        margin-right: 100px;
+        /* align-items: center; */
+        margin-top: 70px;
+        /* max-width: 1300px; */
+        justify-content: center;
+    }
+    
+    .home .poster img {
+        width: 300px;
+        height: 450px;
+        border-radius: 10px;
+        margin-top: 50px;
+    }
+    
+    .movieDetails {
+        /* display: flex;
+    flex-wrap: nowrap; */
+        /* align-items: flex-start; */
+        margin-left: 30px;
+        margin-top: 50px;
+        color: white;
+    }
+    
+    .title {
+        font-size: 15px;
+    }
+    
+    .facts {
+        display: flex;
+    }
+    
+    .genre {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 5px
+    }
+    
+    .actions {
+        display: flex;
+        /* width: 100%; */
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        /* justify-content: flex-start; */
+        margin-left: 20px;
+    }
+    
+    .actions .trailer {
+        margin-left: 70px;
+        z-index: 1;
+        cursor: pointer;
+    }
+    
+    .actions .percent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* width: 30px;
+    height: 30px;
+    border-color: black;
+    border-radius: 50%; */
+        font-weight: 700;
+    }
+    
+    .actions canvas {
+        /* display: inline-block; */
+        border: 2px solid white;
+        background: black;
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+        /* left: 0; */
+    }
+    
+    .actions .userScore {
+        font-weight: 700;
+        margin-left: 70px;
+    }
+    
+    .tagline {
+        margin-bottom: 30px;
+    }
+    
+    .overview h3 {
+        margin-bottom: 30px;
+    }
+    
+    .overview p {
+        width: 70%;
+    }
+    
+    .modal-content {
+        /* position: absolute !important; */
+        /* margin: auto; */
+        right: 50%;
+        /* top: 50% !important;
+    left: 50% !important; */
+        /* transform: translate(-50%, -50%) !important; */
+        background: transparent !important;
+        border: none !important;
+        margin-top: 30px;
+        /* display: flex; */
+    }
+    
+    .modal-body {
+        /* position: absolute; */
+        /* right: 0; */
+        width: 1000px;
+        height: 700px;
+        background: transparent !important;
+        border: none !important;
+    }
+    
+    .close {
+        font-size: 2rem;
+        color: white;
+        text-shadow: none;
+        opacity: 1
+    }
+    
+    .close:hover {
+        color: white !important;
+        text-shadow: none !important;
+    }
+    
+    .wrapper {
+        /* position: relative; */
+        width: 100%;
+        position: absolute;
+    }
+    
+    .cast-wrapper {
+        margin-top: 150px;
+        /* display: flex; */
+    }
+    
+    .title2 h1 {
+        text-decoration: underline;
+        position: absolute;
+        text-underline-position: under;
+        text-align: center;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+    
+    .cast-list {
+        /* grid-gap: 20px; */
+        /* display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; */
+        padding-top: 30px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    
+    .cast-card {
+        width: 200px;
+        height: 300px;
+        margin: 30px;
+    }
+    
+    .cast-img img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        /* width: 200px;
+        height: 300px; */
+    }
+    
+    .cast-name {
+        color: white;
+        margin-top: 20px;
+        font-weight: 700;
+    }
+    
+    .cast-character {
+        color: white;
+    }
+    
+    .cast-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    @media screen and (max-width:600px) {
+        .navbar {
+            padding: 30px;
+        }
+        .navbar .logo h1 {
+            font-size: 30px;
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .home {
+            position: relative;
+            width: auto;
+        }
+        .home .poster img {
+            display: none;
+        }
+        .movieContent {
+            width: auto;
+            margin: 0;
+        }
+        .facts {
+            display: none;
+        }
+        .home .backdrop img {
+            width: 100%;
+            object-fit: cover;
+            object-position: -350px -50px;
+            /* display: none; */
+        }
+        .movieDetails {
+            text-align: center;
+            margin-left: 0;
+            margin-bottom: 50px;
+        }
+        .actions {
+            justify-content: center;
+        }
+        .actions .trailer {
+            margin-left: 30px;
+        }
+        .actions .userScore {
+            height: 50px;
+            margin-left: 50px
+        }
+        .overview p {
+            font-size: 1rem;
+            width: auto;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        .cast-card {
+            width: 100px;
+            height: 200px;
+            margin: 30px;
+        }
+        .modal-content {
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, -50%) !important;
+        }
+        .modal-body {
+            width: 100%;
+            height: 300px;
+            /* margin-left: 150px; */
+            /* margin: auto */
+        }
+        h4 span {
+            display: none;
+        }
+    }
+    
+    @media screen and (min-width:768px) {
+        .movieContent {
+            margin-left: 20px;
+            margin-right: 0
+        }
+        .home .poster img {
+            width: 250px;
+            height: 450px;
+        }
+        .overview p {
+            width: 80%;
+        }
+        .modal-content {
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, -50%) !important;
+        }
+        .modal-body {
+            width: 700px;
+            height: 500px;
+            margin-left: -100px;
+            /* margin-left: 150px; */
+            /* margin: auto */
+        }
+    }

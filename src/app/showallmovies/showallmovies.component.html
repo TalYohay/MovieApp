@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<div class="container">
+    <div class="navbar">
+
+        <div class="logo">
+            <div class="openNav" (click)="openNav()">&#9776; </div>
+            <a href="#">
+                <i class="fa fa-video-camera fa-5x"></i>
+                <h1>Movies</h1>
+            </a>
+        </div>
+        <div class="search">
+            <input type="search" #inputSearch placeholder="Search Movies..." [(ngModel)]="searchTerm" [ngModelOptions]="{standalone: true}">
+        </div>
+
+    </div>
+    <div *ngIf="genreList">
+        <div class="genres">
+
+            <ul id="myGenres">
+                <div class="closebtn" (click)="closeNav()">&times;</div>
+                <li *ngFor="let genre of genreList.genres">
+                    <a [routerLink]="['/', 'genre', genre.id]">{{genre?.name}}</a> </li>
+            </ul>
+        </div>
+    </div>
+    <!-- </div> -->
+    <div class="small-container">
+        <div class="movies-row">
+            <div *ngFor="let movie of allMovies ">
+                <div class="movieCard" *ngFor="let result of movie.results | moviesFilter:searchTerm  | paginate: { itemsPerPage:1, currentPage: pageActual};">
+                    <div class="moviePoster">
+                        <a [routerLink]="['/', 'movie', result.id]">
+                            <img src="https://image.tmdb.org/t/p/original{{result.poster_path}}" onerror="this.src='./assets/images/ffffff.jpg'">
+                        </a>
+                    </div>
+                    <div class="movieTitle">{{result.title}}</div>
+                    <!-- <div class="movieGenre"><small>{{result.id}}</small></div> -->
+                </div>
+
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+        </div>
+    </div>
+</div>

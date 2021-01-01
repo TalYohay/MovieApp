@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<div class="wrapper">
+
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">
+                <i class="fa fa-video-camera fa-5x"></i>
+                <h1>Movies</h1>
+            </a>
+        </div>
+    </div>
+    <div class="home">
+        <div *ngIf="singleMovie">
+            <div class="backdrop">
+                <img src="https://image.tmdb.org/t/p/original//{{singleMovie.backdrop_path}}">
+            </div>
+
+            <div class="movieContent">
+                <div class="poster">
+                    <img src="https://image.tmdb.org/t/p/original//{{singleMovie.poster_path}}">
+                </div>
+                <div class="movieDetails">
+                    <div class="title">
+                        <h1>{{singleMovie.title}} ({{singleMovie.release_date | date:'y'}}) </h1>
+                    </div>
+                    <div *ngIf="singleMovie">
+                        <div class="facts">
+
+                            <p>{{singleMovie.release_date}} ({{singleMovie.original_language}})<strong>&nbsp;&bull;&nbsp;</strong> </p>
+                            <div class="genre" *ngFor="let genre of singleMovie.genres">
+                                <p>{{genre.name}}</p>
+                            </div>
+                            <strong>&bull;</strong> &nbsp;{{singleMovie.runtime}} Minutes
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <div class="percent">
+                            {{singleMovie.vote_average}}
+                            <canvas height="60" width="60"></canvas>
+                        </div>
+                        <div class="userScore">
+                            User <br>Score &nbsp;&nbsp;
+                        </div>
+                        <div class="trailer" (click)="PlayVideo()">
+                            <a data-toggle="modal" data-target="#exampleModalCenter">
+                                <h4><i class="fa fa-play"></i> <span>&nbsp;&nbsp;Play Trailer</span>
+
+                                </h4>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <!-- <div class="modal-header" width="100%">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                        </div> -->
+                                <div *ngIf="SingleMovieVideo">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" (click)="CloseVideo()" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+
+                                        <iframe id="iframe" *ngFor="let videoKey of SingleMovieVideo.results" type="text/html" width="100%" height="100%" controls [src]="('https://www.youtube.com/embed/' + videoKey.key) | safe" autoplay="" loop frameborder="0" allowfullscreen="">
+</iframe>
+                                    </div>
+                                </div>
+                                <!-- <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tagline">
+                        <i>{{singleMovie.tagline}}</i>
+                    </div>
+                    <div class="overview">
+                        <h3>Overview</h3>
+                        <p>{{singleMovie.overview}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="cast-wrapper">
+            <div class="title2">
+                <h1>Cast</h1>
+            </div>
+
+            <div *ngIf="SingleMovieCredit">
+                <div class="container">
+                    <div class="cast-row">
+                        <div class="cast-list" *ngFor="let cast of SingleMovieCredit.cast">
+                            <div class="cast-card">
+                                <div class="cast-img">
+                                    <img src="https://image.tmdb.org/t/p/w500/{{cast.profile_path}}" onerror="this.src='./assets/images/ffffff.jpg'">
+                                </div>
+
+                                <div class="cast-name">
+                                    <p>{{cast.name}}</p>
+                                </div>
+                                <div class="cast-character">
+                                    <p>{{cast.character}}</p>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
