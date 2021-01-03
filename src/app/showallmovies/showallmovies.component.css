@@ -222,7 +222,7 @@
             .genres a {
                 padding: 15px 0 15px 12px;
                 text-decoration: none;
-                font-size: 25px;
+                font-size: 18px;
                 color: #818181;
                 display: block;
                 transition: 0.3s;
@@ -253,7 +253,7 @@
             }
         }
         
-        @media screen and (min-width:768px) and (max-width: 1024px) {
+        @media screen and (min-width:690px) and (max-width: 1024px) {
             .container {
                 /* right: 0; */
                 position: absolute;

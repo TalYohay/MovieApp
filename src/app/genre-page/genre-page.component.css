@@ -195,16 +195,22 @@ input:focus::placeholder {
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (min-width:690px) and (max-width: 1024px) {
     .container {
         right: 0;
         position: absolute;
         top: 0;
         left: 0;
+        width: 1150px;
+    }
+    .navbar {
+        width: 1150px !important;
     }
     .small-container {
-        padding-right: 50px;
-        padding-left: 50px;
+        width: 1150px;
+        padding-left: 20px;
+        /* margin-right: 20px; */
+        padding-right: 20px;
     }
     .search {
         flex: 1;
