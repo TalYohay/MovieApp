@@ -60,6 +60,10 @@
             text-decoration: none;
             align-items: center;
         }
+        
+        .openNav {
+            display: none !important;
+        }
         /* .row {
     display: flex;
     flex-wrap: wrap;
@@ -87,10 +91,6 @@
         }
         
         .genres ul .closebtn {
-            display: none !important;
-        }
-        
-        .genres .openNav {
             display: none !important;
         }
         
@@ -226,7 +226,7 @@
                 color: #818181;
                 display: block;
                 transition: 0.3s;
-                border-bottom: 2px solid #df6680;
+                border-bottom: 2px solid #005b96;
                 margin: auto
             }
             .genres a:hover {
@@ -272,7 +272,7 @@
                 /* position: absolute;
                 left: 20px;
                 font-size: 50px; */
-                display: none;
+                display: none !important;
             }
             .genres ul {
                 margin-left: -150px

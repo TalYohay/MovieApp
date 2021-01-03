@@ -23,7 +23,7 @@ export class GenrePageComponent implements OnInit {
   genreList: any[] = [];
   genre:any[] = []
   genreName:String;
-  genresOfMovies:Object[]=[
+  genresOfMovies:any[]=[
     {
         id: "28",
         name: "Action"
