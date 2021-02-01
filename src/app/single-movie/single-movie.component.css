@@ -69,7 +69,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        right: 0
+        right: 0;
     }
     
     .home:before {
@@ -218,6 +218,7 @@
     .cast-wrapper {
         margin-top: 150px;
         /* display: flex; */
+        margin-bottom: 100px;
     }
     
     .title2 h1 {
@@ -368,11 +369,21 @@
             /* margin-left: 150px; */
             /* margin: auto */
         }
+        .cast-wrapper {
+            /* margin-top: 150px; */
+            /* display: flex; */
+            margin-bottom: 300px;
+        }
     }
     
     @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
         .movieContent {
             margin-left: 50px;
             margin-right: 0
+        }
+        .cast-wrapper {
+            /* margin-top: 150px; */
+            /* display: flex; */
+            margin-bottom: 700px;
         }
     }

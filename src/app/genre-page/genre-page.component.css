@@ -219,4 +219,13 @@ input:focus::placeholder {
     .genres ul {
         padding-left: 150px;
     }
+    .small-container {
+        margin-bottom: 300px;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .small-container {
+        margin-bottom: 600px;
+    }
 }
