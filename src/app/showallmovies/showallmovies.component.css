@@ -90,6 +90,11 @@
             color: white;
         }
         
+        .genres ul li a:hover {
+            text-decoration: none;
+            color: #005b96
+        }
+        
         .genres ul .closebtn {
             display: none !important;
         }
